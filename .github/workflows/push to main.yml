@@ -1,0 +1,19 @@
+name: Push to main
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  confirm-push:
+    name: Confirm push trigger
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report pushed revision
+        run: |
+          echo "Pipeline ran for branch: ${GITHUB_REF_NAME}"
+          echo "Commit: ${GITHUB_SHA}"
