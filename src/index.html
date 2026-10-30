@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f3ed">
+    <title>Deployment Lab</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main class="workspace">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="Deployment Lab home">DL<span>.</span></a>
+        <p class="topbar-label">FIELD NOTES / 001</p>
+        <span class="live-state"><span class="live-dot"></span> PIPELINE READY</span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">A small experiment in shipping</p>
+        <h1 id="page-title">From change<br>to <span>live.</span></h1>
+        <p class="intro-copy">Every push gets a clean build and a test run. Changes that reach the main branch make their way here automatically.</p>
+      </section>
+
+      <section class="release-board" aria-labelledby="release-title">
+        <div class="board-heading">
+          <div>
+            <p class="eyebrow">The release path</p>
+            <h2 id="release-title">One commit. Three steps.</h2>
+          </div>
+          <span class="branch-label">main → production</span>
+        </div>
+        <ol class="pipeline">
+          <li class="pipeline-step">
+            <span class="step-number">01</span>
+            <span class="step-icon" aria-hidden="true">↗</span>
+            <div class="step-copy"><h3>Push</h3><p>A change lands on main</p></div>
+            <span class="step-state">TRIGGERED</span>
+          </li>
+          <li class="pipeline-step">
+            <span class="step-number">02</span>
+            <span class="step-icon check-icon" aria-hidden="true">✓</span>
+            <div class="step-copy"><h3>Build + test</h3><p>The site is checked before release</p></div>
+            <span class="step-state">VERIFIED</span>
+          </li>
+          <li class="pipeline-step">
+            <span class="step-number">03</span>
+            <span class="step-icon deploy-icon" aria-hidden="true">↑</span>
+            <div class="step-copy"><h3>Deploy</h3><p>GitHub Pages publishes the result</p></div>
+            <span class="step-state">AUTOMATIC</span>
+          </li>
+        </ol>
+        <footer class="board-footer">
+          <span><span class="live-dot"></span> SYSTEM STATUS</span>
+          <strong id="status-message" aria-live="polite">Ready for the next change</strong>
+          <button id="run-check" type="button">Run a quick check <span aria-hidden="true">↗</span></button>
+        </footer>
+      </section>
+
+      <footer class="page-footer">
+        <span>BUILT TO SHIP, NOT TO SIT.</span>
+        <span>CI / CD LAB <span class="footer-mark">✳</span></span>
+      </footer>
+    </main>
+  </body>
+</html>
